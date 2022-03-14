@@ -12,3 +12,7 @@ environment:
 
 dev_dependencies:
   lints: ^1.0.0
+dependencies: 
+  googleapis_auth: ^1.3.0
+  rakuda:
+    git: https://github.com/YusukeIwaki/rakuda
