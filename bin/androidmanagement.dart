@@ -56,17 +56,15 @@ Future<Response> auth(PerformRequest performRequest, Request request) async {
   }
   final cachedAccessToken = await _AccessTokenCache().get();
   final accessToken = cachedAccessToken ?? await fetchAccessToken(keyJson);
-  for (var i = 0; i < request.queryParameters.length; i++) {
-    final key = request.queryParameters[i].key;
-    final value = request.queryParameters[i].value;
-    if (value.contains('{projectId}')) {
-      final newValue = value.replaceAll(
-        '{projectId}',
-        jsonDecode(keyJson)['project_id'],
-      );
-      request.queryParameters[i] = MapEntry(key, newValue);
-    }
-  }
+  request.replaceQueryParameter(
+    (entry) => entry.value.contains('{projectId}'),
+    (entry) => MapEntry(
+        entry.key,
+        entry.value.replaceAll(
+          '{projectId}',
+          jsonDecode(keyJson)['project_id'],
+        )),
+  );
   request.setHeader('Authorization', 'Bearer $accessToken');
   var response = await performRequest(request);
 

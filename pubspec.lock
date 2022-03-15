@@ -76,7 +76,7 @@ packages:
     description:
       path: "."
       ref: HEAD
-      resolved-ref: b78dd1aca4f66083bcb78d26223f2b59c6055479
+      resolved-ref: "0893c173cd4d3d64a22739eed70f67d7e7e4df87"
       url: "https://github.com/YusukeIwaki/rakuda"
     source: git
     version: "1.0.0"
