@@ -74,12 +74,10 @@ packages:
   rakuda:
     dependency: "direct main"
     description:
-      path: "."
-      ref: HEAD
-      resolved-ref: "0893c173cd4d3d64a22739eed70f67d7e7e4df87"
-      url: "https://github.com/YusukeIwaki/rakuda"
-    source: git
-    version: "1.0.0"
+      name: rakuda
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "0.1.1"
   source_span:
     dependency: transitive
     description:
